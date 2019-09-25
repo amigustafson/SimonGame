@@ -18,9 +18,11 @@ $(document).keydown(function(){
 
 $(".btn").click(function(event) {
   var userChosenColor = $(this).attr("id");
+  var answerIndex = $.inArray(userChosenColor, buttonColors);
   userClickedPattern.push(userChosenColor);
   playSound(userChosenColor);
   animatePress(userChosenColor);
+  checkAnswer(answerIndex);
 });
 
 //Randomizing a colored button and playing sound
@@ -51,3 +53,7 @@ function animatePress(currentColor) {
     $("#" + currentColor).removeClass("pressed");
   }, 100);
 }
+
+//function checkAnswer(currentLevel){
+
+//}
